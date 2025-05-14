@@ -1,0 +1,19 @@
+# Django
+*.pyc
+__pycache__/
+db.sqlite3
+/static/
+.env
+*.log
+__init__.py
+asgi.py
+settings.py
+urls.py
+wsgi.py
+
+# VSCode
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
