@@ -1,0 +1,28 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f8;
+    margin: 0;
+    padding: 0;
+}
+
+.main-menu {
+    display: flex;
+    justify-content: space-between;
+    background-color: #4CAF50;
+    padding: 30px 50px;
+    text-align: left;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.content {
+    padding: 20px;
+}
