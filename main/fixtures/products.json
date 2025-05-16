@@ -1,0 +1,132 @@
+[
+  {
+    "model": "main.product",
+    "pk": 1,
+    "fields": {
+      "name": "Куртка зимова чоловіча",
+      "category": 1,
+      "price": "1899.00",
+      "country": "Україна",
+      "description": "Тепла чоловіча куртка з капюшоном і утеплювачем.",
+      "discount": "150.00",
+      "image": null
+    }
+  },
+  {
+    "model": "main.product",
+    "pk": 2,
+    "fields": {
+      "name": "Футболка чорна класична",
+      "category": 1,
+      "price": "349.00",
+      "country": "Туреччина",
+      "description": "Чорна футболка з натуральної бавовни. Ідеально підходить для літа.",
+      "discount": null,
+      "image": null
+    }
+  },
+  {
+    "model": "main.product",
+    "pk": 3,
+    "fields": {
+      "name": "Джинси сині slim fit",
+      "category": 1,
+      "price": "999.00",
+      "country": "Бангладеш",
+      "description": "Сині джинси облягаючого крою з якісного деніму.",
+      "discount": "100.00",
+      "image": null
+    }
+  },
+  {
+    "model": "main.product",
+    "pk": 4,
+    "fields": {
+      "name": "Сорочка біла офісна",
+      "category": 1,
+      "price": "599.00",
+      "country": "Україна",
+      "description": "Класична сорочка білого кольору з довгим рукавом.",
+      "discount": null,
+      "image": null
+    }
+  },
+  {
+    "model": "main.product",
+    "pk": 5,
+    "fields": {
+      "name": "Світшот чоловічий сірий",
+      "category": 1,
+      "price": "749.00",
+      "country": "Китай",
+      "description": "М'який світшот з флісовим утепленням. Комфортний та стильний.",
+      "discount": "50.00",
+      "image": null
+    }
+  },
+  {
+    "model": "main.product",
+    "pk": 6,
+    "fields": {
+      "name": "Кросівки чоловічі білі",
+      "category": 1,
+      "price": "1299.00",
+      "country": "В'єтнам",
+      "description": "Зручні та легкі кросівки для щоденного використання.",
+      "discount": null,
+      "image": null
+    }
+  },
+  {
+    "model": "main.product",
+    "pk": 7,
+    "fields": {
+      "name": "Шорти літні чоловічі",
+      "category": 1,
+      "price": "459.00",
+      "country": "Індія",
+      "description": "Літні шорти з бавовни. Ідеальні для спеки.",
+      "discount": null,
+      "image": null
+    }
+  },
+  {
+    "model": "main.product",
+    "pk": 8,
+    "fields": {
+      "name": "Піджак класичний чорний",
+      "category": 1,
+      "price": "1599.00",
+      "country": "Польща",
+      "description": "Стильний піджак для офісу та урочистих подій.",
+      "discount": "200.00",
+      "image": null
+    }
+  },
+  {
+    "model": "main.product",
+    "pk": 9,
+    "fields": {
+      "name": "Ремінь шкіряний",
+      "category": 1,
+      "price": "299.00",
+      "country": "Італія",
+      "description": "Чоловічий ремінь з натуральної шкіри.",
+      "discount": null,
+      "image": null
+    }
+  },
+  {
+    "model": "main.product",
+    "pk": 10,
+    "fields": {
+      "name": "Шкарпетки спортивні (набір 3 пари)",
+      "category": 1,
+      "price": "149.00",
+      "country": "Україна",
+      "description": "Набір з трьох пар високих шкарпеток для спорту.",
+      "discount": "20.00",
+      "image": null
+    }
+  }
+]
