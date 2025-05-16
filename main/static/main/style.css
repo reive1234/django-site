@@ -26,3 +26,15 @@ nav a:hover {
 .content {
     padding: 20px;
 }
+
+.card {
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 0 15px rgba(0, 191, 255, 0.8);
+    /* Блакитний неоновий ефект */
+    transform: translateY(-5px);
+    /* Легке підняття */
+    border: 1px solid rgba(0, 191, 255, 0.5);
+}

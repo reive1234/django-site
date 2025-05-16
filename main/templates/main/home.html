@@ -1,29 +1,70 @@
+{% extends 'main/base.html' %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="uk">
+{% block title %}Головна - Мій сайт{% endblock %}
 
-<head>
-    <meta charset="UTF-8">
-    <title>{% block title %}Магазин{% endblock %}</title>
-    <link rel="stylesheet" href="{% static 'main/style.css' %}">
-</head>
+{%block menu%}
+<li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Головна</a></li>
+<li class="nav-item"><a class="nav-link" href="{% url 'about' %}">Про нас</a></li>
+<li class="nav-item"><a class="nav-link" href="{% url 'new' %}">Новинки</a></li>
+<li class="nav-item"><a class="nav-link" href="{% url 'sale' %}">Знижки</a></li>
+<li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Авторизація</a></li>
+{% endblock %}
 
-<body>
-    <nav class="main-menu">
-        <div>
-            <a href="{% url 'home' %}">Головна</a>
-            <a href="{% url 'about' %}">Про нас</a>
-            <a href="{% url 'sale' %}">Акції</a>
-            <a href="{% url 'new' %}">Новинки</a>
+{% block content %}
+<div class="row">
+    <!-- Лівий блок: Фільтри -->
+    <aside class="col-md-3 mb-4">
+        <form method="get">
+            <h5>Категорії</h5>
+            {% for cat in categories %}
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="category" value="{{ cat.id }}"
+                    id="cat{{ cat.id }}" {% if cat.id in selected_categories %}checked{% endif %}>
+                <label class="form-check-label" for="cat{{ cat.id }}">{{ cat.name }}</label>
+            </div>
+            {% endfor %}
+
+            <h5 class="mt-4">Ціна (грн)</h5>
+            <div class="mb-3">
+                <input type="number" name="price_min" class="form-control" placeholder="Мінімальна"
+                    value="{{ price_min }}" min="0" id="price_min"
+                    oninput="document.getElementById('price_max').min = this.value">
+            </div>
+            <div class="mb-3">
+                <input type="number" name="price_max" class="form-control" placeholder="Максимальна"
+                    value="{{ price_max }}" min="{{ price_min|default:0 }}" id="price_max">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Фільтрувати</button>
+        </form>
+    </aside>
+
+    <!-- Правий блок: Список товарів -->
+    <section class="col-md-9">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            {% for product in products %}
+            <div class="col">
+                <div class="card h-100">
+                    {% if product.image %}
+                    <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}">
+                    {% endif %}
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">{{ product.name }}</h5>
+                        <p class="card-text">{{ product.description|truncatewords:20 }}</p>
+                        <p class="card-text"><small class="text-muted">Країна виробник: {{ product.country }}</small>
+                        </p>
+                        <p class="card-text fw-bold">{{ product.price }} грн</p>
+                        <div class="mt-auto">
+                            <a href="#" class="btn btn-sm btn-outline-primary">Детальніше</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+            <p>Товари не знайдені.</p>
+            {% endfor %}
         </div>
-
-        <a href="{% url 'login' %}">Увійти</a>
-    </nav>
-    <hr>
-    <div class="content">
-        {% block content %}{% endblock %}
-    </div>
-</body>
-
-</html>
+    </section>
+</div>
+{% endblock %}

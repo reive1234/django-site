@@ -1,19 +1,22 @@
-{% load static %}
+{% extends 'main/base.html' %}
 
-<!DOCTYPE html>
-<html lang="uk">
-<head>
-    <meta charset="UTF-8">
-    <title>{% block title %}Магазин{% endblock %}</title>
-    <link rel="stylesheet" href="{% static 'main/style.css' %}">
-</head>
-<body>
-    <nav class="main-menu">
-        <a href="{% url 'home' %}">Головна</a>
-    </nav>
-    <hr>
-    <div class="content">
-        {% block content %}{% endblock %}
-    </div>
-</body>
-</html>
+{% block title %}Авторизація{% endblock %}
+
+{%block menu%}
+<li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Головна</a></li>
+{% endblock %}
+
+{% block content %}
+<h1>Авторизація</h1>
+<form>
+  <div class="mb-3">
+    <label for="email" class="form-label">Пошта</label>
+    <input type="email" class="form-control" id="email" placeholder="Введіть пошту">
+  </div>
+  <div class="mb-3">
+    <label for="password" class="form-label">Пароль</label>
+    <input type="password" class="form-control" id="password" placeholder="Введіть пароль">
+  </div>
+  <button type="submit" class="btn btn-primary">Увійти</button>
+</form>
+{% endblock %}

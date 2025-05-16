@@ -1,19 +1,46 @@
+{% extends 'main/base.html' %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="uk">
-<head>
-    <meta charset="UTF-8">
-    <title>{% block title %}Магазин{% endblock %}</title>
-    <link rel="stylesheet" href="{% static 'main/style.css' %}">
-</head>
-<body>
-    <nav class="main-menu">
-        <a href="{% url 'home' %}">Головна</a>
-    </nav>
-    <hr>
-    <div class="content">
-        {% block content %}{% endblock %}
+{% block title %}Про нас - Мій магазин одягу{% endblock %}
+
+{%block menu%}
+<li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Головна</a></li>
+{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <h1 class="mb-4 text-center">Про нас</h1>
+    <div class="row" style="display: flex; align-items: center;">
+        <div class="col-md-6">
+            <p>
+                Ми — команда ентузіастів, яка створила інтернет-магазин одягу, щоб подарувати кожному можливість виглядати стильно та відчувати себе впевнено.
+                Наш магазин пропонує широкий вибір якісного одягу для жінок, чоловіків та дітей — від класичних речей до останніх модних новинок.
+            </p>
+            <p>
+                Ми працюємо без посередників, що дозволяє нам пропонувати найкращі ціни та гарантувати якість кожної речі.
+                Наша мета — зробити онлайн-шопінг зручним, швидким і приємним.
+            </p>
+        </div>
+        <div class="col-md-6">
+            <img src="https://images.unsplash.com/photo-1746817066768-c395734a1430?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Про нас" class="img-fluid rounded shadow">
+        </div>
     </div>
-</body>
-</html>
+
+    <hr class="my-5">
+
+    <div class="row text-center">
+        <div class="col-md-4">
+            <h5>Швидка доставка</h5>
+            <p>Ми доставляємо замовлення по всій Україні в найкоротші терміни.</p>
+        </div>
+        <div class="col-md-4">
+            <h5>Повернення без проблем</h5>
+            <p>14 днів на повернення чи обмін товару без зайвих запитань.</p>
+        </div>
+        <div class="col-md-4">
+            <h5>Підтримка 24/7</h5>
+            <p>Наша команда завжди на зв'язку, щоб допомогти вам.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
